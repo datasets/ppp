@@ -1,0 +1,44 @@
+{
+  "name": "ppp",
+  "title": "Purchasing power parity (PPP)",
+  "version": "0.1.0",
+  "license": "ODC-PDDL-1.0",
+  "sources": [
+    {
+      "name": "World Bank, International Comparison Program database",
+      "web": "http://data.worldbank.org/indicator/PA.NUS.PPP"
+    }
+  ],
+  "resources": [
+    {
+      "name": "ppp-gdp",
+      "path": "data/ppp-gdp.csv",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "Country Name",
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Country ID",
+            "type": "string",
+            "description": "ISO 3166-1 alpha-2 code"
+          },
+          {
+            "name": "Year",
+            "type": "date",
+            "description": "YYYY"
+          },
+          {
+            "name": "PPP",
+            "type": "number",
+            "description": "PPP conversion factor, GDP (LCU per international $)"
+          }
+        ]
+      }
+    }
+  ]
+}
