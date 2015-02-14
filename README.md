@@ -1,4 +1,4 @@
-Purchasing power parity (PPP)
+Purchasing power parity (PPP). Data are sourced from the World Bank, International Comparison Program database. One dataset is provided: PPP conversion factor, GDP (LCU per international $).
 
 ## Data
 
@@ -6,10 +6,14 @@ Purchasing power parity (PPP)
 
 > Purchasing power parity conversion factor is the number of units of a country's currency required to buy the same amounts of goods and services in the domestic market as U.S. dollar would buy in the United States.[*][pa-nus-ppp]
 
+### Citations
+
+1. *PPP conversion factor, GDP (LCU per international $).* World Bank, International Comparison Program database.
+
 ### Sources
 
-* PPP conversion factor, GDP (LCU per international $)
-    * Name: World Bank, International Comparison Program database.
+1. 
+    * Name: PPP conversion factor, GDP (LCU per international $). World Bank, International Comparison Program database.
     * Web: http://data.worldbank.org/indicator/PA.NUS.PPP
 
 ## Data Preparation
@@ -41,4 +45,4 @@ This Data Package is made available under the Public Domain Dedication and Licen
 Refer to the [terms of use][worldbank] of the source dataset for any specific restrictions on using these data in a public or commercial product.
 
 [pa-nus-ppp]: http://data.worldbank.org/indicator/PA.NUS.PPP 
-[worldbank]: []http://web.worldbank.org/WBSITE/EXTERNAL/0,,contentMDK:22547097~pagePK:50016803~piPK:50016805~theSitePK:13,00.html
+[worldbank]: http://web.worldbank.org/WBSITE/EXTERNAL/0,,contentMDK:22547097~pagePK:50016803~piPK:50016805~theSitePK:13,00.html
