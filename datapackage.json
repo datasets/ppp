@@ -19,7 +19,7 @@
       "schema": {
         "fields": [
           {
-            "name": "Country Name",
+            "name": "Country",
             "type": "string"
           },
           {
@@ -30,7 +30,8 @@
           {
             "name": "Year",
             "type": "date",
-            "description": "YYYY"
+            "format": "YYYY",
+            "description": "Relevant year"
           },
           {
             "name": "PPP",
