@@ -90,8 +90,8 @@ def setup():
     if not path.exists('data'):
         makedirs('data')
 
-def dash_separate(string):
-    return sub(r'[\s\_\']', '-', sub(r'[\(\)\.\,]', '', string)).lower()
+def safe_filename(string):
+    return ''.join([c for c in string if c.isalpha()]).lower()
 
 def retrieve_indicator(id, name, indicator):
     '''
@@ -104,7 +104,7 @@ def retrieve_indicator(id, name, indicator):
     endpoint = '/'.join(['countries', id, 'indicators', indicator])
     wb = WorldBankAPIXML(endpoint)
     content = wb.get_page(1)
-    filename = dash_separate(name) + '.xml'
+    filename = safe_filename(name) + '.xml'
     dest = path.join('tmp', filename)
     with open(dest, 'wb') as file:
         logger.info("Writing {filename}".format(filename=filename))
