@@ -1,21 +1,13 @@
 {
-  "name": "ppp",
-  "title": "Purchasing power parity (PPP)",
   "description": "Data are sourced from the World Bank, International Comparison Program database. One dataset is provided: PPP conversion factor, GDP (LCU per international $).",
-  "version": "0.1.0",
   "license": "ODC-PDDL-1.0",
-  "sources": [
-    {
-      "name": "PPP conversion factor, GDP (LCU per international $). World Bank, International Comparison Program database.",
-      "web": "http://data.worldbank.org/indicator/PA.NUS.PPP"
-    }
-  ],
+  "name": "ppp",
   "resources": [
     {
-      "name": "ppp-gdp",
-      "path": "data/ppp-gdp.csv",
       "format": "csv",
       "mediatype": "text/csv",
+      "name": "ppp-gdp",
+      "path": "data/ppp-gdp.csv",
       "schema": {
         "fields": [
           {
@@ -23,23 +15,31 @@
             "type": "string"
           },
           {
+            "description": "ISO 3166-1 alpha-2 code",
             "name": "Country ID",
-            "type": "string",
-            "description": "ISO 3166-1 alpha-2 code"
+            "type": "string"
           },
           {
+            "description": "Relevant year",
+            "format": "any",
             "name": "Year",
-            "type": "date",
-            "format": "YYYY",
-            "description": "Relevant year"
+            "type": "date"
           },
           {
+            "description": "PPP conversion factor, GDP (LCU per international $)",
             "name": "PPP",
-            "type": "number",
-            "description": "PPP conversion factor, GDP (LCU per international $)"
+            "type": "number"
           }
         ]
       }
     }
-  ]
+  ],
+  "sources": [
+    {
+      "name": "PPP conversion factor, GDP (LCU per international $). World Bank, International Comparison Program database.",
+      "web": "http://data.worldbank.org/indicator/PA.NUS.PPP"
+    }
+  ],
+  "title": "Purchasing power parity (PPP)",
+  "version": "0.1.0"
 }
