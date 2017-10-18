@@ -21,9 +21,8 @@
           },
           {
             "description": "Relevant year",
-            "format": "any",
             "name": "Year",
-            "type": "date"
+            "type": "year"
           },
           {
             "description": "PPP conversion factor, GDP (LCU per international $)",
@@ -37,7 +36,8 @@
   "sources": [
     {
       "name": "PPP conversion factor, GDP (LCU per international $). World Bank, International Comparison Program database.",
-      "web": "http://data.worldbank.org/indicator/PA.NUS.PPP"
+      "web": "http://data.worldbank.org/indicator/PA.NUS.PPP",
+      "title": "PPP conversion factor, GDP (LCU per international $). World Bank, International Comparison Program database."
     }
   ],
   "title": "Purchasing power parity (PPP)",
