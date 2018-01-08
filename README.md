@@ -16,7 +16,7 @@ Purchasing power parity (PPP). Data are sourced from the World Bank, Internation
     * Name: PPP conversion factor, GDP (LCU per international $). World Bank, International Comparison Program database.
     * Web: http://data.worldbank.org/indicator/PA.NUS.PPP
 
-## Data Preparation
+## Preparation
 
 ### Requirements
 
