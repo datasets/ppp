@@ -1,6 +1,12 @@
 {
   "description": "Data are sourced from the World Bank, International Comparison Program database. One dataset is provided: PPP conversion factor, GDP (LCU per international $).",
-  "license": "ODC-PDDL-1.0",
+  "licenses": [
+    {
+      "name": "ODC-PDDL-1.0",
+      "path": "http://opendatacommons.org/licenses/pddl/",
+      "title": "Open Data Commons Public Domain Dedication and License v1.0"
+    }
+  ],
   "name": "ppp",
   "resources": [
     {
@@ -36,7 +42,7 @@
   "sources": [
     {
       "name": "PPP conversion factor, GDP (LCU per international $). World Bank, International Comparison Program database.",
-      "web": "http://data.worldbank.org/indicator/PA.NUS.PPP",
+      "path": "http://data.worldbank.org/indicator/PA.NUS.PPP",
       "title": "PPP conversion factor, GDP (LCU per international $). World Bank, International Comparison Program database."
     }
   ],
