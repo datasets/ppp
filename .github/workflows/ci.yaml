@@ -1,6 +1,8 @@
 name: ppp github action ci 
 
 on: 
+  schedule:
+    - cron: "0 8 1 * *"
   push:
     branches:
       - master
