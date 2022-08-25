@@ -1,0 +1,26 @@
+name: ppp github action ci 
+
+on: 
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: "0 8 1 * *"
+  
+jobs:
+    build: 
+      name: Build
+      runs-on: ubuntu-18.04
+      steps: 
+      - name: checkout repo 
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: update data
+        run : make data
+
+      - name: Commit and Push updated data in this repo
+        uses: mikeal/publish-to-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
