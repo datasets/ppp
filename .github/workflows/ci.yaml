@@ -19,4 +19,9 @@ jobs:
         run: if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: update data
         run : make data
-        
+
+      - name: Commit and Push updated data in this repo
+        uses: mikeal/publish-to-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
