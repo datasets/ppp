@@ -20,7 +20,7 @@ Purchasing power parity (PPP). Data are sourced from the World Bank, Internation
 
 ### Requirements
 
-Data preparation requires Python 2. Required external Python modules are listed in the `requirements.txt` file in this directory.
+Data preparation requires Python 3. Required external Python modules are listed in the `requirements.txt` file in this directory.
 
 ### Processing
 

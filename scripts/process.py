@@ -1,12 +1,6 @@
-#!/usr/bin/env python
-
-from __future__ import print_function
-
+#!/usr/bin/env python3
 import logging
-
 from os import path, makedirs, listdir
-from StringIO import StringIO
-from re import sub
 
 # External modules.
 from lxml import etree
@@ -53,8 +47,8 @@ class CountriesEndpoint:
         self.ns = {'wb': 'http://www.worldbank.org'}
 
     def get_context(self, xml):
-        io = StringIO(xml)
-        return etree.iterparse(io, events=('end',), tag=self.tag)
+        root = etree.fromstring(xml)
+        return root.iter(tag=self.tag)
 
     def get_region(self, element):
         return element.find('wb:region', namespaces=self.ns).attrib['id']
@@ -78,7 +72,7 @@ class CountriesEndpoint:
         content = wb.list()
         while content:
             context = self.get_context(content)
-            for event, element in context:
+            for element in context:
                 country = self.get_country(element)
                 if country:
                     yield country
@@ -132,7 +126,7 @@ def xml_to_csv():
             xml = path.join('tmp', filename)
             doc = etree.parse(xml)
             result_tree = transform(doc)
-            yield unicode(result_tree)
+            yield result_tree
 
 def extract():
     '''
@@ -143,7 +137,7 @@ def extract():
     header = 'Country,Country ID,Year,PPP'
     with open(dest, 'wb') as file:
         logger.info("Writing {filename}".format(filename=filename))
-        print(header, file=file)
+        file.write((header + '\n').encode('utf-8'))
         for data in xml_to_csv():
             file.write(data)
 
