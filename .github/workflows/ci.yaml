@@ -20,7 +20,8 @@ jobs:
         run : make data
 
       - name: Commit and Push updated data in this repo
-        uses: mikeal/publish-to-github-action@main
+        uses: mikeal/publish-to-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH_NAME: main
     
