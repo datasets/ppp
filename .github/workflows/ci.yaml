@@ -3,7 +3,7 @@ name: ppp github action ci
 on: 
   push:
     branches:
-      - master
+      - main
   schedule:
     - cron: "0 8 1 * *"
   
