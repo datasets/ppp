@@ -36,6 +36,11 @@ make data
 
 The raw data are output to `./tmp`. The processed data are output to `./data`.
 
+## Automation
+
+Up-to-date (auto-updates every month at 8 am) ppp dataset could be found on the datahub.io:
+https://datahub.io/core/ppp
+
 ## License
 
 ### ODC-PDDL-1.0
