@@ -1,27 +1,39 @@
-name: ppp github action ci 
+name: ppp github action ci
 
-on: 
-  push:
-    branches:
-      - main
+on:
   schedule:
     - cron: "0 8 1 * *"
-  
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
 jobs:
-    build: 
-      name: Build
-      runs-on: ubuntu-22.04
-      steps: 
-      - name: checkout repo 
-        uses: actions/checkout@v2
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
       - name: Install dependencies
         run: if [ -f scripts/requirements.txt ]; then pip install -r scripts/requirements.txt; fi
-      - name: update data
-        run : make data
 
-      - name: Commit and Push updated data in this repo
-        uses: mikeal/publish-to-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH_NAME: main
-    
+      - name: Update data
+        run: make data
+
+      - name: Commit and push updates
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "actions@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Automated commit"
+            git push origin main
+          fi
